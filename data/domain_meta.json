@@ -1,0 +1,138 @@
+{
+  "key": "sapm-orbital-debris",
+  "meta_fill": {
+    "pi": "$293B",
+    "psa": "-$599.6T",
+    "mu": "0.0005",
+    "kappa": "3.20"
+  },
+  "psf": {
+    "pi_c": 15.0,
+    "pi_p": 293.0,
+    "w_c": 600000.0,
+    "kappa": 3.2
+  },
+  "monte_carlo": {
+    "mean": 2053.0,
+    "ci_lo": 1200.0,
+    "ci_hi": 3500.0,
+    "pct_hw": 100.0,
+    "n_draws": 10000,
+    "channels": [
+      {
+        "name": "Cascade cascade risk (Kessler)",
+        "dist": "log-normal",
+        "lo": 400000,
+        "hi": 1200000,
+        "mode": 700000
+      },
+      {
+        "name": "LEO congestion externalities",
+        "dist": "log-normal",
+        "lo": 50000,
+        "hi": 200000,
+        "mode": 110000
+      },
+      {
+        "name": "Satellite lifetime reduction",
+        "dist": "triangular",
+        "lo": 15000,
+        "hi": 60000,
+        "mode": 35000
+      },
+      {
+        "name": "Launch risk & insurance",
+        "dist": "triangular",
+        "lo": 8000,
+        "hi": 25000,
+        "mode": 15000
+      },
+      {
+        "name": "Astronomy & dark sky",
+        "dist": "triangular",
+        "lo": 2000,
+        "hi": 8000,
+        "mode": 4500
+      },
+      {
+        "name": "Governance failure",
+        "dist": "uniform",
+        "lo": 1000,
+        "hi": 5000,
+        "mode": 2800
+      }
+    ]
+  },
+  "thresholds": [
+    {
+      "domain": "Kessler Syndrome initiation in LEO",
+      "year": 2050,
+      "confidence": "Medium",
+      "status": "NASA models: self-sustaining cascade possible by 2050 without active debris removal",
+      "crossed": false
+    },
+    {
+      "domain": "Starlink Mega-constellation >10,000 objects",
+      "year": 2025,
+      "confidence": "High",
+      "status": "SpaceX has deployed >6,000 Starlinks; Gen2 approval for 30,000+",
+      "crossed": true
+    },
+    {
+      "domain": "Annual conjunction warnings >500K",
+      "year": 2024,
+      "confidence": "High",
+      "status": "LeoLabs tracking >1M conjunctions annually in 2024",
+      "crossed": true
+    },
+    {
+      "domain": "First commercial active debris removal mission",
+      "year": 2026,
+      "confidence": "High",
+      "status": "Astroscale ELSA-M and ESA ClearSpace-1 both targeting 2026-2027",
+      "crossed": false
+    },
+    {
+      "domain": "Mandatory 5-year deorbit compliance >80%",
+      "year": 2030,
+      "confidence": "Low",
+      "status": "FCC now requires 5-year deorbit; enforcement capacity unclear",
+      "crossed": false
+    }
+  ],
+  "axioms": {
+    "type": "impossibility",
+    "items": [
+      {
+        "id": "A1",
+        "name": "Launch Necessity",
+        "description": "Access to orbital space is required for telecommunications, navigation, Earth observation, weather prediction, and national security \u2014 demand that no single actor can eliminate under current technological and geopolitical conditions."
+      },
+      {
+        "id": "A2",
+        "name": "Debris Generation Identity",
+        "description": "Every object placed in orbit increases conjunction probability for all existing objects; launch and orbital congestion are the same orbital-mechanics event, and no demonstrated technology removes debris at the rate current launch cadences generate it."
+      },
+      {
+        "id": "A3",
+        "name": "Kessler Cascade Irreversibility",
+        "description": "Above a critical orbital density threshold, collisional cascading becomes self-sustaining \u2014 each collision generates fragments that cause additional collisions, thermodynamically irreversible without removal rates exceeding any demonstrated technology."
+      }
+    ]
+  },
+  "methods": {
+    "welfare_function": "W computed as expected value of Kessler cascade welfare cost (loss of all orbital infrastructure) weighted by cascade probability under current trajectory, plus annual congestion externalities and satellite lifetime reduction costs.",
+    "cooperative_baseline": "Orbital access under binding congestion pricing, mandatory active debris removal, and strict post-mission disposal, generating $15B in legitimate satellite service value with maintained orbital environment.",
+    "key_sources": [
+      "NASA, Orbital Debris Quarterly News (2024)",
+      "Liou & Johnson, Risks in space from orbiting debris (2006) Science",
+      "ESA, Space Environment Report (2024)",
+      "Kessler & Cour-Palais, Collision frequency of artificial satellites (1978) JGR"
+    ],
+    "falsification": [
+      "F1: Demonstrate that current LEO debris density is below the Kessler cascade threshold for all major orbital shells using NASA LEGEND model validation.",
+      "F2: Show that active debris removal technology (ClearSpace-1, ELSA-M class) can remove debris faster than current launch cadences generate it at commercially viable cost.",
+      "F3: Demonstrate that orbital debris collision risk has not increased since 2010 despite a 300% increase in tracked objects."
+    ]
+  }
+}
