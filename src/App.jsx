@@ -390,9 +390,6 @@ export default function PSTOrbitalDebrisDashboard() {
           </div>
         )}
 
-          </div>
-        )}
-
         {/* THRESHOLDS TAB */}
         {tab === 'thresholds' && (
           <div>
