@@ -61,7 +61,7 @@ const CROSS_DOMAIN = [
 ];
 
 const HIGHLIGHTS = [
-        "β_W = 2,053 — dominated by Channel 4 (Intertemporal Option Value). Destroying an orbit forecloses every satellite that would ever operate there, every GPS fix, every weather forecast — for centuries.",
+        "βW = 2,053 — dominated by Channel 4 (Intertemporal Option Value). Destroying an orbit forecloses every satellite that would ever operate there, every GPS fix, every weather forecast — for centuries.",
         "Floor β ≈ 12.0 under Orbital Congestion Ceiling (Theorem IX). Even with perfect debris removal of all other channels, option value destruction floor cannot be escaped.",
         "Tier 4 governance vacuum: first domain in SAPM program where impossibility is driven by constitutional architecture of international legal order — no sovereign has jurisdiction over orbital commons.",
         "50:1 to 100:1 system beta differential between low-altitude (~550 km, self-cleaning) and high-altitude (800–1,200 km, permanent contamination). Altitude architecture IS the welfare cost.",
@@ -326,7 +326,7 @@ export default function PSTOrbitalDebrisDashboard() {
                   <th style={{padding:'8px 12px',textAlign:'left',color:C.gold}}>CAPM ANALOGUE</th>
                 </tr></thead>
                 <tbody>
-                  {[['β_W (System Beta)','β (Market Beta)'],['PSF (Private-Systemic Frontier)','SML (Security Market Line)'],[<>μ* (Shadow Price)</>,<>r<sub>f</sub> (Risk-Free Rate)</>],['Πˢᵃ (System-Adjusted Payoff)','α (Jensen\'s Alpha)'],['W (System Welfare)','No equivalent — structurally invisible'],[<>𝒮<sub>W</sub> (Welfare Efficiency)</>,<>Sharpe Ratio</>]].map(([s,c],i) => (
+                  {[[<>β<sub>W</sub> (System Beta)</>,<>β (Market Beta)</>],['PSF (Private-Systemic Frontier)','SML (Security Market Line)'],[<>μ* (Shadow Price)</>,<>r<sub>f</sub> (Risk-Free Rate)</>],['Πˢᵃ (System-Adjusted Payoff)','α (Jensen\'s Alpha)'],['W (System Welfare)','No equivalent — structurally invisible'],[<>𝒮<sub>W</sub> (Welfare Efficiency)</>,<>Sharpe Ratio</>]].map(([s,c],i) => (
                     <tr key={i} style={{borderBottom:`1px solid rgba(255,255,255,0.04)`}}>
                       <td style={{padding:'8px 12px',color:C.text}}>{s}</td>
                       <td style={{padding:'8px 12px',color:C.muted,fontFamily:C.serif}}>{c}</td>
@@ -483,7 +483,7 @@ export default function PSTOrbitalDebrisDashboard() {
       </div>
 
       
-      {/* 𝒮_W WELFARE EFFICIENCY RATIO */}
+      {/* 𝒮W WELFARE EFFICIENCY RATIO */}
       <div style={{padding:"24px",background:C.panel,border:"2px solid #EF444440",borderRadius:4,margin:"24px 0"}}>
         <div style={{fontFamily:C.mono,fontSize:12,color:"#EF4444",letterSpacing:2,marginBottom:16}}>WELFARE EFFICIENCY RATIO</div>
         <div style={{display:"flex",alignItems:"baseline",gap:12,marginBottom:12}}>
